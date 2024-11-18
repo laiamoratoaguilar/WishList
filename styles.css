@@ -1,0 +1,230 @@
+/* Estils generals */
+body {
+    font-family: 'Tangerine', cursive;
+    font-size: xx-large;
+    color: rgb(148, 50, 50);
+    text-shadow: 2px 2px 4px rgba(28, 22, 23, 0.3);
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+
+    /*Afegir una imatge de fons */
+    background-image: url('images/fons2.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+  
+}
+/* Llumetes i cable */
+.lights-container {
+    display: flex;
+    justify-content: center;
+    gap: 65px;
+    position: absolute;
+    top: 0;
+    flex-direction: column;
+    height: 100%;
+    padding: 0 15px;
+}
+.lights-container.left {
+    left: 15px;
+    align-items: flex-start;
+}
+.lights-container.right {
+    right: 15px;
+    align-items: flex-end;
+}
+.cable {
+    position:absolute;
+    width: 5px;
+    height: 100%;
+    background-color: rgb(100, 44, 44);
+    border: 50%;
+    transform: translateY(0);
+    border-radius: 5px;
+    box-shadow:  0 4px 10px rgba(0, 0, 0, 0.2);
+}
+.lights-container.right .cable {
+    right:0;
+}
+.light-container.left .cable {
+    left:0;
+}
+.light {
+    width: 30px;
+    height: 30px;
+    border-radius: 50px;
+    background-color: grey;
+    box-shadow: 0 0 10px rgb(124, 124, 146); /* this the radiance when the light is off*/
+    animation: blink 5s infinite;
+    position: relative;
+    margin-right: -10px;
+    margin-top: 5px;
+
+}
+.light-container.left .light {
+    margin-left: -5px;
+}
+.light-container.right.light {
+    margin-right: -5px;
+}
+/* Colors per les llumetes */
+.light:nth-child(1) {
+    background-color: black;
+    animation-delay: 0s;
+}
+.light:nth-child(2) {
+    background-color: rgb(148, 50, 50);
+    animation-delay: 0.5s;
+}
+.light:nth-child(3) {
+    background-color: rgb(20, 92, 20);
+    animation-delay: 1s;
+}
+.light:nth-child(4) {
+    background-color: rgb(148, 50, 50);
+    animation-delay: 1.5s;
+}
+.light:nth-child(5) {
+    background-color: rgb(20, 92, 20);
+    animation-delay: 2s;
+}
+.light:nth-child(6) {
+    background-color: rgb(148, 50, 50);
+    animation-delay: 2.5s;
+}
+.light:nth-child(7) {
+    background-color: rgb(20, 92, 20);
+    animation-delay: s;
+}
+/* Botons */
+/* Boto Add */
+#add-item-btn {
+    background-color: #959965;
+    color: white;
+    font-size: medium;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 50px;
+    box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+    margin-left: 10px;
+  
+}
+#add-item-btn:hover {
+    background-color: rgb(88, 99, 33);
+    box-shadow:  0px 4px 10px rgba(0, 0, 0, 0.3);
+    transform: scale(1.1);
+}
+
+/* Botó per esborar tota la llista */
+#clear-list-btn {
+    background-color: #959965;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 50px;
+    cursor: pointer;
+    border-radius: 50px;
+    box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.2);
+    font-size: medium;
+    transition: all 0.3s easae;
+    margin-top: 15px;
+}
+#clear-list-btn:hover {
+    background-color: rgb(88, 99, 33);
+    box-shadow:  0px 4px 10px rgba(0, 0, 0, 0.3);
+    transform: scale(1.1);
+}
+
+/* Boto basura */
+.delete-btn {
+    background-color: rgb(252, 252, 251);
+    color:black;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: smaller;
+    width: 25px;
+    height: 25px;
+    margin-left: 5px;
+    font-size: small;
+    width: 40px;
+} 
+.delete-btn:hover {
+    background-color: rgb(255, 255, 255);
+    box-shadow: 4px 4px 12px rgba(249, 249, 249, 0.948);
+    transform: scale(1.2);
+}
+
+/* Elements de la llista */
+#item-input {
+    width: 300px;
+    height: 50px;
+    font-family:  'Tangerine', cursive;
+    font-size: x-large;
+    padding: 0 15px;
+    outline: none;
+    box-shadow: #56c383;
+    border:3px solid rgb(182, 138, 138);
+    border-radius: 50px;
+    transition: all 0.3s;
+}
+
+#item-input:focus {
+    border-color: #ce2626;
+    box-shadow: #56c383;
+}
+
+#wish-list li {
+    animation: fadeIn 0.5s ease-in-out; /* 0.5s és la durada de l'animació, ease-in-out fa que l'animació comenci i acabi de forma suau*/
+    list-style-type: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 500px;
+    margin: 10px auto;
+    padding: 10px 15px;
+    font-size: xx-large;
+    color: rgb(255, 255, 255);
+    background-color: #a72e2e;
+    border-radius: 10px;
+    font-weight: bolder;
+}
+#wish-list li:hover {
+    transform: translateY(5px);
+    transform: scale(1.1);
+    box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Animacions */
+/* FadeIn és el nom de l'animació */
+@keyframes fadeIn {
+    from {
+        opacity: 0; /* Comença invisible */
+        transform: translateY(-10px); /* Mou l'element cap amunt 10 pixels */
+    }
+    to {
+        opacity: 1; /* Acaba completament visible */
+        transform: translateY(0);
+    }
+}
+
+/* Animació per les llumetes */
+@keyframes blink {
+    0%, 100% {
+        opacity: 0.3;
+        box-shadow: 0 0 5px gray;
+    }
+    50% {
+        opacity: 1;
+        box-shadow: 0 0 20px currentColor;
+    }
+}
+
+
